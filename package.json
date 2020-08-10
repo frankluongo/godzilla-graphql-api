@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "git push heroku master",
+    "deploy": "git push && git push heroku master",
+    "deploy:github": "git push",
+    "deploy:heroku": "git push heroku master",
     "dev": "cd src && nodemon index.js",
     "start": "cd src && node index.js"
   },
