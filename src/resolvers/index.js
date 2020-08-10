@@ -3,9 +3,7 @@ const resolvers = {
     movies: () => {
       return movies;
     },
-    movie: () => {
-      return movies[0];
-    },
+    movie: getSingleMovie,
   },
 };
 
@@ -23,5 +21,9 @@ const movies = [
     rating: 71,
   },
 ];
+
+function getSingleMovie(_, { id }) {
+  return movies.find((mov) => mov.id === id);
+}
 
 module.exports = resolvers;

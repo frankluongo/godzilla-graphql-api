@@ -30,3 +30,19 @@ Built based on the `Level Up Tutorials` Series, _How To Make a GraphQL API_
     kaiju: [Kaiju] # Multiple
   }
 ```
+
+## Arguments in GraphQL (From Video #10)
+
+```js
+const resolvers = {
+  Query: {
+    movie: (obj, args, ctx, info) => {
+      // obj = Object containing some info
+      // args = Arguments passed into the query
+      // ctx = Context about the request
+      // info = Data about the query execution
+      return movies[0];
+    },
+  },
+};
+```
