@@ -1,6 +1,6 @@
 # Godzilla API
 
-Built based on the `Level Up Tutorials` Series, _How To Make a GraphQL API_
+Built based on the `Level Up Tutorials` Series, _How To Make a GraphQL API_. The series is using [Apollo Server](https://www.apollographql.com/docs/apollo-server/) to manage the GraphQL Server setup.
 
 ## GraphQL Types & Enums
 
