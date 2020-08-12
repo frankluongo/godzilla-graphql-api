@@ -1,6 +1,7 @@
 const { GraphQLScalarType } = require("graphql");
 
 const dateScalar = require("./resDate");
+const Mutation = require("./resMutations");
 const { movieResolvers, Movie } = require("./resMovies");
 
 const resolvers = {
@@ -8,6 +9,7 @@ const resolvers = {
     ...movieResolvers,
   },
   ...Movie,
+  ...Mutation,
   Date: new GraphQLScalarType(dateScalar),
 };
 

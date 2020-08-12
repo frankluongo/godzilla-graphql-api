@@ -24,9 +24,15 @@ const typeDefs = gql`
     # kaiju: [Kaiju!]! Here Valid = [...data]
   }
 
+  type Mutation {
+    addMovie(title: String, releaseDate: Date, id: ID): [Movie]
+  }
+
   type Query {
     movies: [Movie]
     movie(id: ID): Movie
+    # kaijus: [Kaiju]
+    # kaiju(id: ID): Kaiju
   }
 `;
 
