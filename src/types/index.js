@@ -8,31 +8,43 @@ const typeDefs = gql`
     TO_WATCH
   }
 
+  input KaijuInput {
+    id: ID
+    name: String
+  }
+
+  input MovieInput {
+    id: ID
+    title: String
+    altTitles: [String]
+    releaseDate: Date
+    rating: Int
+    kaiju: [KaijuInput]
+  }
+
   type Kaiju {
     id: ID!
     name: String!
   }
 
   type Movie {
-    id: ID! # The Bang (!) means this can't be null
+    id: ID!
     title: String!
     altTitles: [String]
     releaseDate: Date
     rating: Int
     kaiju: [Kaiju]
-    # kaiju: [Kaiju]! Here Valid = [], [...data]
-    # kaiju: [Kaiju!]! Here Valid = [...data]
   }
 
   type Mutation {
-    addMovie(title: String, releaseDate: Date, id: ID): [Movie]
+    addMovie(movie: MovieInput): [Movie]
   }
 
   type Query {
     movies: [Movie]
     movie(id: ID): Movie
-    # kaijus: [Kaiju]
-    # kaiju(id: ID): Kaiju
+    kaijus: [Kaiju]
+    kaiju(id: ID): Kaiju
   }
 `;
 

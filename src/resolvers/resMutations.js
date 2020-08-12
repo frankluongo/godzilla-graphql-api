@@ -6,9 +6,9 @@ const Mutation = {
   },
 };
 
-function addMovie(obj, { id, title, releaseDate }, ctx, info) {
-  const newMovie = { id, title, releaseDate };
-  return [...moviesData, newMovie];
+function addMovie(obj, { movie }, ctx, info) {
+  console.log(movie);
+  return [...moviesData, movie];
 }
 
 module.exports = Mutation;
