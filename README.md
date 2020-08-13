@@ -46,3 +46,8 @@ const resolvers = {
   },
 };
 ```
+
+## 16 What is an AST
+
+- AST means `Abstract String Tree`.
+- It basically means converting a string into something your API (computer, browser, etc.) can understand
