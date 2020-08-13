@@ -1,12 +1,17 @@
+require("dotenv").config({
+  path: "../.env",
+});
 const { ApolloServer } = require("apollo-server");
-const resolvers = require("./resolvers");
-const typeDefs = require("./types");
+const resolvers = require("./graphql/resolvers");
+const typeDefs = require("./graphql/types");
 
+const dbConnect = require("./data");
 const { context } = require("./config");
 
 init();
 
 async function init() {
+  dbConnect();
   const server = new ApolloServer({
     typeDefs,
     resolvers,

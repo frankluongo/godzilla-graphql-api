@@ -1,4 +1,4 @@
-const { moviesData } = require("../data");
+const { moviesData } = require("../../sampleData");
 
 const Mutation = {
   Mutation: {

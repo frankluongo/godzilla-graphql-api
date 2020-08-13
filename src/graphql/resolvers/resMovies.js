@@ -1,4 +1,4 @@
-const { kaijuData, moviesData } = require("../data");
+const { kaijuData, moviesData } = require("../../sampleData");
 
 exports.movieResolvers = {
   movies,
