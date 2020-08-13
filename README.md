@@ -51,3 +51,14 @@ const resolvers = {
 
 - AST means `Abstract String Tree`.
 - It basically means converting a string into something your API (computer, browser, etc.) can understand
+
+## 17 What Are Fragments
+
+Fragments are reusable bits of query that are defined on the client-side
+
+```graphql
+fragment Meta on Movie {
+  releaseDate
+  rating
+}
+```
