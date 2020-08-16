@@ -46,6 +46,10 @@ const typeDefs = gql`
     kaijus: [Kaiju]
     kaiju(id: ID): Kaiju
   }
+
+  type Subscription {
+    movieAdded: Movie
+  }
 `;
 
 module.exports = typeDefs;
