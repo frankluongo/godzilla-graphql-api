@@ -1,4 +1,4 @@
-const { moviesData } = require("../../sampleData");
+const { Movie } = require("../../data/models");
 
 const Mutation = {
   Mutation: {
@@ -6,9 +6,16 @@ const Mutation = {
   },
 };
 
-function addMovie(obj, { movie }, ctx, info) {
-  console.log(ctx.fakeUser);
-  return [...moviesData, movie];
+async function addMovie(_obj, { movie }, _ctx, _info) {
+  try {
+    await Movie.create({ ...movie });
+    const allMovies = await Movie.find();
+    return allMovies;
+  } catch (e) {
+    console.log(e);
+  }
 }
+
+async function editMovie(_obj, { movie }, _ctx, _info) {}
 
 module.exports = Mutation;

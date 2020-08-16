@@ -1,16 +1,27 @@
 const { kaijuData, moviesData } = require("../../sampleData");
+const { Movie } = require("../../data/models");
 
 exports.movieResolvers = {
   movies,
   movie,
 };
 
-function movies() {
-  return moviesData;
+async function movies() {
+  try {
+    const allMovies = await Movie.find();
+    return allMovies;
+  } catch (e) {
+    console.log(error);
+  }
 }
 
-function movie(_, { id }) {
-  return moviesData.find((mov) => mov.id === id);
+async function movie(_, { id }) {
+  try {
+    const movie = await Movie.findById(id);
+    return movie;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 exports.Movie = {
